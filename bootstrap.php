@@ -10,14 +10,15 @@ use Doctrine\ORM\Tools\Setup,
     Doctrine\Common\ClassLoader;
 
 $loader = require __DIR__.'/vendor/autoload.php';
-$loader->add('Coderockr', __DIR__.'/src');
+$loader->add('Daniel', __DIR__.'/src');
 
 //doctrine
 $config = new Configuration();
 //$cache = new Cache();
-$cache = new \Doctrine\Common\Cache\ApcCache();
+
+$cache = new \Doctrine\Common\Cache\ArrayCache();
 $config->setQueryCacheImpl($cache);
-$config->setProxyDir('/tmp');
+$config->setProxyDir(__DIR__.'/temp');
 $config->setProxyNamespace('EntityProxy');
 $config->setAutoGenerateProxyClasses(true);
  
@@ -39,7 +40,7 @@ $em = EntityManager::create(
     	'port'    => '3306',
     	'user'    => 'root',
 	    'password'  => '',
-    	'dbname'  => 'silex',
+    	'dbname'  => 'danielchaves',
     ),
     $config
 );

@@ -1,0 +1,42 @@
+/* The green css style */
+#header h2{
+	background:url(../images/v-card-green.png) no-repeat;
+}
+
+#tabsContainer{	
+	border-top:5px solid #a4ce3f;
+}	
+
+#mainNav a.active{
+	background:url(../images/arrow-green.png) no-repeat center 33px;
+}
+
+#mainNav a.active{
+	color:#a4ce3f;
+}
+
+ul#category li:hover{
+	background-color: #a4ce3f !important;
+}
+
+.current{
+	background-color: #a4ce3f !important;
+}
+
+li.item h3 span{
+	color:#a4ce3f;
+}
+
+input#submit:hover{
+	background-color:#a4ce3f;
+}
+
+footer span + span a{
+	color:#a4ce3f;
+}
+
+
+/*End green css style*/
+
+
+

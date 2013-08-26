@@ -1,0 +1,4 @@
+<footer id="pageFooter">
+	<p>Copyright <?php echo date('Y') ?>Daniel Chaves</p>
+	</footer>
+<!--End Page Footer-->

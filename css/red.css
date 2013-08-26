@@ -1,0 +1,42 @@
+/* The red css style */
+#header h2{
+	background:url(../images/v-card-red.png) no-repeat;
+}
+
+#tabsContainer{	
+	border-top:5px solid #ef0007;
+}	
+
+#mainNav a.active{
+	background:url(../images/arrow-red.png) no-repeat center 33px;
+}
+
+#mainNav a.active{
+	color:#ef0007;
+}
+
+ul#category li:hover{
+	background-color: #ef0007 !important;
+}
+
+.current{
+	background-color: #ef0007 !important;
+}
+
+li.item h3 span{
+	color:#ef0007;
+}
+
+input#submit:hover{
+	background-color:#ef0007;
+}
+
+footer span + span a{
+	color:#ef0007;
+}
+
+
+/*End red css style*/
+
+
+

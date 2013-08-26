@@ -1,0 +1,40 @@
+/* The blue css style */
+#header h2{
+	background:url(../images/v-card-blue.png) no-repeat;
+}
+
+#tabsContainer{	
+	border-top:5px solid #00b4d9;
+}	
+
+#mainNav a.active{
+	background:url(../images/arrow-blue.png) no-repeat center 33px;
+}
+
+#mainNav a.active{
+	color:#00b4d9;
+}
+
+ul#category li:hover{
+	background-color: #00b4d9 !important;
+}
+
+.current{
+	background-color: #00b4d9 !important;
+}
+
+li.item h3 span{
+	color:#00b4d9;
+}
+
+input#submit:hover{
+	background-color:#00b4d9;
+}
+
+footer span + span a{
+	color:#00b4d9;
+}
+
+
+/*End blue css style*/
+

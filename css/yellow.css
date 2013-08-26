@@ -1,0 +1,45 @@
+/* The yellow css style */
+#header h2{
+	background:url(../images/v-card-yellow.png) no-repeat;
+}
+
+#tabsContainer{	
+	border-top:5px solid #fdc62a;
+}	
+
+#mainNav a.active{
+	background:url(../images/arrow-yellow.png) no-repeat center 33px;
+}
+
+#mainNav a.active{
+	color:#fdc62a;
+}
+
+ul#category li:hover{
+	background-color: #fdc62a !important;
+}
+
+.current{
+	background-color: #fdc62a !important;
+}
+
+li.item h3 span{
+	color:#fdc62a;
+}
+
+input#submit:hover{
+	background-color:#fdc62a;
+}
+
+footer span + span a{
+	color:#fdc62a;
+}
+
+
+/*End yellow css style*/
+
+
+
+
+
+

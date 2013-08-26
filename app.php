@@ -13,12 +13,15 @@ $app->register(new Silex\Provider\TwigServiceProvider(), array(
 $app->register(new Silex\Provider\SwiftmailerServiceProvider());
 
 //actions
-$app->get('/', function ()  use ($app, $em) {
-	$q = $em->createQuery("select u from Coderockr\Model\User u");
-    $users = $q->getResult();
-	
-    return $app['twig']->render('user.twig', array(
-        'users' => $users
+$app->get('/', function ()  use ($app,$em) {
+	$website = $em->getRepository('Daniel\Model\Site')->find("1");
+		
+    return $app['twig']->render('home.twig', array(
+       'website' => array(
+       		'title'=>$website->getSitename(),
+       		'footer'=>$website->getSitefooter(),
+       		
+       )
 	));
 });
 
