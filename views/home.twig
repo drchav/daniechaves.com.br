@@ -1,4 +1,116 @@
 {% extends 'index.twig' %}
 {% block content %}
 
+<!-- Tabs Container-->
+<section id="tabsContainer">
+	<!--Inner-->
+	<div id="innerBg">
+		
+			<!--About Tab-->
+		<article id="home" class="clearfix">
+			<figure id="img"></figure>
+			
+				<div id="about">
+				<hgroup>
+				<h1>Daniel Chaves .'.</h1>
+				<h3>Developer</h3>
+				</hgroup>
+				
+					<!--Intro Section-->
+				<section id="introduction">
+					<h2>Sobre</h2>
+					<p style="text-align: justify;">Desenvolvedor a mais de 10 anos, em diversas linguagens, especialita em PHP e em desenvolvimento de soluções enterprise, Analise Forense de dados, HDs, Bancos de Dados e investigação de fraudes</p>
+					<h2>Sócio das empresas:</h2>
+					<h2><a href="http://www.32dll.com.br" target="_blank">32.DLL Tecnologia Ltda</a></h2>
+					<p style="text-align: justify;">Empresa especializada em desenvolvimento de sistemas web, suporte a ambientes linux e windows e desenvolvimento de soluções web em geral</p>
+					<h2><a href="http://www.proetica.com.br" target="_blank">ProÉtica</a></h2>
+					<p style="text-align: justify;">A Pró Ética é uma consultoria personalizada e especializada na gestão da conscientização ética, na mitigação de riscos de fraudes e no combate a corrupção.</p>
+					<h2><a href="http://www.munerattiassessoria.com.br" target="_blank">Muneratti Assessoria</a></h2>
+					<p style="text-align: justify;">A Muneratti Assessoria tem vasta experiência em desenvolver investigações de fraudes através de auditorias de inteligência baseada em metodologia desenvolvida por planos estratégicos que abrangem uma analise detalhada do modus operandi das fraudes e nos potenciais riscos ligados a área financeira, contábil, tributário, comercial e ambiental. Temos expertise em desenvolver programas de identificação de desvio de conduta de funcionários através de nosso portal Pro-Ética.</p>
+				</section>
+					<!--End Intro Section-->
+				
+				<!--Skills Section-->
+				<section id="skills">
+				<h2>Competências:</h2>
+				
+				<ul class="skillList">
+{% for skill in skills %}
+	<li>{{ skill.skill }}</li>
+
+{% endfor %}
+</ul>
+						</section>
+					<!--End Skills Section-->
+				</div>
+				<!--End About Tab-->
+			</article>
+
+			
+				
+			<!--Social Tab-->	
+		<article id="social" class="clearfix">
+				<h2>Redes Sociais</h2>
+				
+					<!-- Socials -->	
+				<section id="socialsLists" class="clearfix">
+				<ul class="socialList1 ">
+					<li><a href="#" ><img src="images/fb.png" alt=""/><h3>FaceBook</h3><span>facebook.com/drchav</span></a></li>
+					<li><a href="#"><img src="images/tw.png" alt="" /><h3>Twitter</h3><span>twitter.com/drchav</span></a></li>
+					<li><a href="#" ><img src="images/in.png" alt=""/><h3>Linkedin</h3><span>linkedin.com/drchav</span></a></li>
+					</ul>
+					
+						</section>
+						<!-- End Socials -->
+						
+						<!-- Tweets -->	
+						
+								<!-- End Tweets -->	
+			
+			
+		</article>
+			<!--End Social Tab-->
+			
+				<!--Contact Tab-->	
+		<article id="contact" class="clearfix">
+				<h2>Contato</h2>
+			<!--Contact form-->		
+			<section id="contactForm">
+				<h3>Envie uma mensagem</h3>
+				<form class="contactForm" method="post" action="send.php">
+			        <input type="text" name="name" id="name" placeholder="Nome" class="required">
+			        <input type="email" name="email" id="email"  placeholder="Email" class="required">
+			        <textarea name="message" id="message"  cols="45" rows="10" placeholder="Mensagem" class="required"></textarea>
+			        <input type="submit" name="submit" id="submit" value="Enviar Mensagem">
+			      </form>
+				</section>
+				
+				<!--End Contact form-->	
+				
+				<!--Contact info-->	
+				<section id="contactInfo">
+						<h3>Informações de Contato:</h3>
+						
+							<p class="hr">Daniel Chaves
+						</p>
+						
+                            <ul> 
+						<li><span>Telefone</span> : + 55 11 2337-2747</li>
+						<li><span>Celular</span> : + 55 11 94507-4004</li>
+						<li><span>Email</span> : daniel@danielchaves.com.br</li>
+						<li><span>Website</span> : http://www.danielchaves.com.br</li>
+							</ul>
+					</section>
+					<!--End Contact info-->	
+		</article>
+			<!--End Contact Tab-->	
+
+</div>
+<!--End Inner-->		
+</section>
+
+
+
 {% endblock %}
+
+

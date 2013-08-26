@@ -15,13 +15,17 @@ $app->register(new Silex\Provider\SwiftmailerServiceProvider());
 //actions
 $app->get('/', function ()  use ($app,$em) {
 	$website = $em->getRepository('Daniel\Model\Site')->find("1");
+	$skils = $em->createQuery("Select u from Daniel\Model\Skills u");
+	$skills = $skils->getArrayResult();
 		
     return $app['twig']->render('home.twig', array(
        'website' => array(
        		'title'=>$website->getSitename(),
        		'footer'=>$website->getSitefooter(),
        		
-       )
+       ),
+    		'skills' =>$skills,
+    		
 	));
 });
 
