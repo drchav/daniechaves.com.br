@@ -2,15 +2,24 @@
 	"name" : "drchav/danielchaves.com.br",
 	"description" : "Silex sample",
 	"require" : {
-		"symfony/console" : "*",
-		"symfony/twig-bridge" : "2.1.*",
-		"twig/twig" : ">=1.8,<2.0-dev",
+		"symfony/twig-bridge" : ">=2",
 		"doctrine/dbal" : "2.2.*",
+		"symfony/locale" : ">=2.3",
 		"symfony/http-kernel" : "*",
+		"symfony/form" : "~2.3",
 		"doctrine/orm" : "*",
-		"swiftmailer/swiftmailer" : ">=4.1.2,<4.2-dev",
+		"symfony/browser-kit" : "*",
 		"silex/silex" : "1.0.*",
-		"symfony/browser-kit" : "*"
+		"symfony/console" : "*",
+		"symfony/config" : "~2.3",
+		"twig/twig" : ">=1.8,<2.0-dev",
+		"symfony/validator" : "~2.3",
+		"symfony/translation" : "~2.3",
+		"swiftmailer/swiftmailer" : ">=4.1.2,<4.2-dev",
+		"symfony/form": "~2.3",
+		"symfony/validator": "~2.3",
+		"symfony/config": "~2.3",
+    		"symfony/translation": "~2.3"
 	},
 	"minimum-stability" : "alpha"
 }

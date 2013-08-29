@@ -5,10 +5,16 @@ $app = new Silex\Application();
 
 //configuration
 $app->register(new Silex\Provider\SessionServiceProvider());
+$app->register(new Silex\Provider\FormServiceProvider());
 
 $app->register(new Silex\Provider\TwigServiceProvider(), array(
     'twig.path' => __DIR__.'/views',
 ));
+$app->register(new Silex\Provider\TranslationServiceProvider(), array(
+		'locale' => 'pt_BR',
+		'translation.class_path' =>  __DIR__ . '/../vendor/symfony/src',
+		'translator.messages' => array()
+)) ;
 
 $app->register(new Silex\Provider\SwiftmailerServiceProvider());
 
@@ -18,7 +24,7 @@ $app->get('/', function ()  use ($app,$em) {
 	$skils = $em->createQuery("Select u from Daniel\Model\Skills u");
 	$skills = $skils->getArrayResult();
 		
-    return $app['twig']->render('home.twig', array(
+    return $app['twig']->render('index.twig', array(
        'website' => array(
        		'title'=>$website->getSitename(),
        		'footer'=>$website->getSitefooter(),
@@ -36,29 +42,51 @@ $app->post('/contato', function() use ($app,$em){
 
 $app->get('/login', function() use ($app,$em){
 	
+	$website = $em->getRepository('Daniel\Model\Site')->find("1");
+	
+	
+	$form = $app['form.factory']->createBuilder('form')
+	->add('username','text')
+	->add('password','password')->getForm();
+	
+	return $app['twig']->render('login.twig',array('form' => $form->createView(),
+			'website' => array(
+					'title'=>$website->getSitename(),
+					'footer'=>$website->getSitefooter(),
+					 
+			),
+	));
        
 });
 
 $app->post('/login', function() use ($app,$em){
 	
+	
        
 });
 
-$app->get('/page/{slug}', function () use ($app,$em){
+$app->get('/pages/{slug}', function ($slug) use ($app,$em){
+
 	$page = $em->getRepository('Daniel\Model\Pages')->findBy(array('slug'=>$slug));
+	$page = $page[0];
 	
-	$page->getSlug();
-	
-	return $app['twig']->render($page->view().'.twig',array(
-		'Content'=>array(
-				'title' => $page->getTitle(),
-				'content' => $page->getContent(),
-				'slug' => $page->getSlug(),
-				'view' => $page->getView(),
-				'id' => $page->getId()
-		        )
-		   )
-		);
+	if(count($page) > 0){
+	  	
+    	return $app['twig']->render('normal-ajax.twig',array(
+		    'Content'=>array(
+				    'title' => $page->getTitle(),
+				    'content' => $page->getContent(),
+				    'slug' => $page->getSlug(),
+				    'view' => $page->getView(),
+				    'id' => $page->getId()
+		            )
+		       )
+		    );
+	}else{
+		
+		return $app['twig']->render('notfound.twig');
+		
+	}
 	
        
 });
