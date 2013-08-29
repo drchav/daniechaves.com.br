@@ -39,7 +39,7 @@ $em = EntityManager::create(
     	'host'    => 'localhost',
     	'port'    => '3306',
     	'user'    => 'root',
-	    'password'  => '',
+	    'password'  => '@p0q1o9w2',
     	'dbname'  => 'danielchaves',
     ),
     $config

@@ -29,6 +29,40 @@ $app->get('/', function ()  use ($app,$em) {
 	));
 });
 
+$app->post('/contato', function() use ($app,$em){
+	
+       
+});
+
+$app->get('/login', function() use ($app,$em){
+	
+       
+});
+
+$app->post('/login', function() use ($app,$em){
+	
+       
+});
+
+$app->get('/page/{slug}', function () use ($app,$em){
+	$page = $em->getRepository('Daniel\Model\Pages')->findBy(array('slug'=>$slug));
+	
+	$page->getSlug();
+	
+	return $app['twig']->render($page->view().'.twig',array(
+		'Content'=>array(
+				'title' => $page->getTitle(),
+				'content' => $page->getContent(),
+				'slug' => $page->getSlug(),
+				'view' => $page->getView(),
+				'id' => $page->getId()
+		        )
+		   )
+		);
+	
+       
+});
+
 $app->post('/user', function() use ($app, $em) {
     $name = $app['request']->get('name');
     $login = $app['request']->get('name');
