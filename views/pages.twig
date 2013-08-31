@@ -1,0 +1,42 @@
+{% if is_granted('ROLE_ADMIN') %}
+<div class="clearfix"></div>
+<div class="row-fluid">
+<div class="span4 offset8">
+<a href="/sys/pages/new" class="btn btn-primary ajax">Nova Página</a>
+</div>
+</div>
+<div class="clearfix"></div>
+
+
+<div class="row-fluid">
+<div class="span12">
+<table class="table table-hover">
+<thead>
+<tr>
+<th> Id </th>
+<th> Slug </th>
+<th> Titulo </th>
+<th> Opt </th>
+</tr>
+</thead>
+<tbody>
+{% for pagina in pages %}
+<tr>
+<td>{{ pagina.getId() }}</td>
+<td>{{ pagina.getSlug() }}</td>
+<td>{{ pagina.getTitle() }}</td>
+<td><a href="/sys/pages/editar/{{ pagina.getId() }}" class="btn btn-primary ajax">Editar</a> <a href="/sys/pages/excluir/{{ pagina.getId() }}" class="btn btn-primary ajax">Excluir</a></td>
+
+{% endfor %}
+</tbody>
+</table>
+
+</div>
+
+</div>
+
+<div class="clearfix"></div>
+
+
+
+{% endif %}

@@ -1,0 +1,41 @@
+	<article id="contact" class="clearfix">
+				<h2>Contato</h2>
+			<!--Contact form-->
+			<section id="contactForm">
+				<h3>Envie uma mensagem</h3>
+
+				<form class="contactForm" id="contactForm" action="/send/contact" method="post" >
+			        <input type="text" name="form[name]" id="name" placeholder="Nome" class="required">
+			        <input type="email" name="form[email]" id="email"  placeholder="Email" class="required">
+			        <textarea name="form[message]" id="message"  cols="45" rows="10" placeholder="Mensagem" class="required"></textarea>
+			        <input type="submit" name="submit" class="btn btn-primary" id="submit" value="Enviar Mensagem">
+			      </form>
+				</section>
+
+				<!--End Contact form-->
+
+				<!--Contact info-->
+				<section id="contactInfo">
+						<h3>Informações de Contato:</h3>
+
+							<p class="hr">{{ dados.getSiteName() }}
+						</p>
+
+                            <ul>
+						<li><span>Telefone</span> : {{ dados.getTelefonefixo() }}</li>
+						<li><span>Celular</span> : {{ dados.getTelefonecelular() }}</li>
+						<li><span>Email</span> : {{ dados.getEmailcontato() }}</li>
+						<li><span>Website</span> : {{ dados.getSiteurl() }}</li>
+							</ul>
+					</section>
+					<!--End Contact info-->
+		</article>
+
+		<script>
+		 $(document).ready(function() {
+
+        $('#contactForm').ajaxForm(function() {
+            alert("Mensagem Enviada");
+        });
+    });
+    </script>;

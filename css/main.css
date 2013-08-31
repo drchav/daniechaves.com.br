@@ -46,6 +46,8 @@ body{
 	position:relative;
 }
 
+
+
 #header {
 	position:relative;
 	z-index:10;	
@@ -419,7 +421,7 @@ ul.socialList1 li span , ul.socialList2 li span{
 	float:left;
 }
 
-
+/*
 
 input[type="text"], input[type="email"] ,textarea{
 	margin-bottom:5px;
@@ -433,7 +435,7 @@ input[type="text"], input[type="email"] ,textarea{
 	outline-width: 0;
 }
 
-input[type="text"], input[type="email"] {
+input[type="text"], input[type="email"],input[type="password"] {
 	width: 280px;
 	height: 27px;
 }
@@ -466,6 +468,7 @@ input#submit:hover{
 	-webkit-transition: all 0.4s ease-in-out;
 	transition: all 0.4s ease-in-out;
 }
+*/
 
 #contactInfo{
 	width:285px;
@@ -748,14 +751,6 @@ li.item h3{width:187px;}
 ul.socialList1, ul.socialList2 {width: 255px;float:none;}
 #twitter {padding-bottom: 16px;padding-top: 0;}
 
-/* Contact style (contact section)*/
-#contact,#social,#portfolio{margin-top:20px;}
-#contactForm, #contactInfo {float: none;width: 230px;border:none;}
-form{margin-left:8px;}			
-#contactForm{ margin-bottom:20px;}
-input[type="text"], input[type="email"]{width:90%;}
-textarea{width:91%;}
-input#submit{margin-left:48px;}
 
 /* Style switcher (removing the style switcher in the small device) */
 #styleswitcher{display:none;}

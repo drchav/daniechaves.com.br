@@ -1,5 +1,13 @@
-
-<b>Daniel</b>
+<link rel="stylesheet" href="/css/main.css" />
 {% block content %}
-{{ Content.content }}
+{{ Content.content | raw  }}
 {% endblock %}
+<script>
+$(document).ready(function(){
+$(".socialList1 li, .socialList2 li").hover( function(){
+	$(this).find("img").animate({marginTop:"-7px"},200);
+}, function(){
+$(this).find("img").animate({marginTop:"4px"},200);
+});
+})
+</script>

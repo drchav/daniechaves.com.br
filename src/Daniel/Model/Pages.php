@@ -6,96 +6,99 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Entity
  * @ORM\Table(name="pages")
  */
-class Pages {
+class Pages
+{
+    /**
+     * @ORM\Id @ORM\Column(type="integer")
+     * @ORM\GeneratedValue
+     * @var integer
+     */
+    protected $id;
 
-	/**
-	 * @ORM\Id @ORM\Column(type="integer")
-	 * @ORM\GeneratedValue
-	 * @var integer
-	 */
-	protected $id;
+    /**
+     * @ORM\Column(type="string", length=150, nullable=true)
+     *
+     * @var string
+     */
 
-	/**
-	 * @ORM\Column(type="string", length=150, nullable=true)
-	 *
-	 * @var string
-	 */
+    protected $slug;
 
-	protected $slug;
-	
-	
-	/**
-	 * @ORM\Column(type="string", length=150, nullable=true)
-	 *
-	 * @var string
-	 */
-	
-	protected $title;
-	
-	
-	/**
-	 * @ORM\Column(type="string", length=150, nullable=true)
-	 *
-	 * @var string
-	 */
-	
-	protected $view;
+    /**
+     * @ORM\Column(type="string", length=150, nullable=true)
+     *
+     * @var string
+     */
 
-	
-	
-	/**
-	 * @ORM\Column(type="text")
-	 *
-	 * @var string
-	 */
+    protected $title;
 
-	protected $content;
-	
-	
+    /**
+     * @ORM\Column(type="string", length=150, nullable=true)
+     *
+     * @var string
+     */
 
-	
-	public function getId() {
-		return $this->id;
-	}
+    protected $view;
 
-	public function setId($id) {
-		$this->id = $id;
-	}
+    /**
+     * @ORM\Column(type="text")
+     *
+     * @var string
+     */
 
-	public function getSlug() {
-		return $this->slug;
-	}
+    protected $content;
 
-	public function setSlug($slug) {
-		$this->slug = $slug;
-	}
+    public function getId()
+    {
+        return $this->id;
+    }
 
-	public function getContent() {
-		return $this->content;
-	}
+    public function setId($id)
+    {
+        $this->id = $id;
+    }
 
-	public function setContent($content) {
-		$this->content = $content;
-	}
+    public function getSlug()
+    {
+        return $this->slug;
+    }
 
-	public function getTitle() {
-		return $this->title;
-	}
-	
-	public function setTitle( $title) {
-		$this->title = $title;
-		return $this;
-	}
+    public function setSlug($slug)
+    {
+        $this->slug = $slug;
+    }
 
-	public function getView() {
-		return $this->view;
-	}
-	
-	public function setView( $view) {
-		$this->view = $view;
-		return $this;
-	}
-	
-	
+    public function getContent()
+    {
+        return $this->content;
+    }
+
+    public function setContent($content)
+    {
+        $this->content = $content;
+    }
+
+    public function getTitle()
+    {
+        return $this->title;
+    }
+
+    public function setTitle( $title)
+    {
+        $this->title = $title;
+
+        return $this;
+    }
+
+    public function getView()
+    {
+        return $this->view;
+    }
+
+    public function setView( $view)
+    {
+        $this->view = $view;
+
+        return $this;
+    }
 
 }

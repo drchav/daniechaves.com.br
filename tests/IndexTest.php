@@ -10,16 +10,17 @@ class IndexTest extends WebTestCase
     {
         require __DIR__.'/../app.php';
         $this->app['session.test'] = true;
-    	return $app;
+
+        return $app;
     }
 
     public function testPaginaInicial()
     {
         $client = $this->createClient();
-    	$crawler = $client->request('GET', '/');
+        $crawler = $client->request('GET', '/');
 
-    	$this->assertTrue($client->getResponse()->isOk());
-    	$this->assertRegExp('/Users/', $client->getResponse()->getContent());
+        $this->assertTrue($client->getResponse()->isOk());
+        $this->assertRegExp('/Users/', $client->getResponse()->getContent());
     }
 
 }
